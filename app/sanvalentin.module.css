@@ -1,0 +1,227 @@
+/* ===============================
+   Layout general
+================================ */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  background: radial-gradient(circle at top, #1b1b1b 0%, #0a0a0a 70%);
+  color: #fff;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+/* ===============================
+   Contenedor central
+================================ */
+.container {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ===============================
+   Card principal
+================================ */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 26px;
+  padding: 48px 32px;
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  animation: fadeUp 0.6s ease;
+}
+
+/* ===============================
+   Títulos
+================================ */
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+
+  background: linear-gradient(90deg, #ffffff, #ffd6ea);
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+/* ===============================
+   Textos
+================================ */
+.text {
+  font-size: 16px;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.textMuted {
+  font-size: 14px;
+  opacity: 0.65;
+  line-height: 1.5;
+}
+
+/* ===============================
+   Acciones / botones contenedor
+================================ */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* ===============================
+   BOTÓN PRINCIPAL (romántico glow)
+================================ */
+.primary {
+  background: linear-gradient(135deg, #ff5fa2, #ff8acb);
+  color: #111;
+
+  border: none;
+  padding: 14px 28px;
+  border-radius: 16px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 10px 30px rgba(255, 95, 162, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.primary:hover {
+  transform: translateY(-3px) scale(1.04);
+
+  box-shadow:
+    0 18px 42px rgba(255, 95, 162, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.primary:active {
+  transform: scale(0.98);
+}
+
+.primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===============================
+   SUCCESS SCREEN
+================================ */
+.success {
+  position: relative;
+  overflow: hidden;
+
+  text-align: center;
+  padding: 70px 28px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border-radius: 26px;
+
+  animation:
+    fadeUp 0.6s ease,
+    fadeIn 1.2s ease;
+}
+
+/* ===============================
+   FLORES / JAZMINES
+================================ */
+.flowers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* pétalo/flor individual */
+.flower {
+  position: absolute;
+  top: -100px;
+
+  font-size: 22px;
+  opacity: 0.95;
+
+  animation: fall linear infinite;
+
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 0 14px rgba(255, 160, 200, 0.35));
+}
+
+/* ===============================
+   Animaciones
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* caída orgánica tipo pétalos */
+@keyframes fall {
+  0% {
+    transform: translateY(-120px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  40% {
+    transform: translateY(40vh) translateX(30px) rotate(160deg);
+  }
+
+  70% {
+    transform: translateY(80vh) translateX(-25px) rotate(260deg);
+  }
+
+  100% {
+    transform: translateY(120vh) translateX(15px) rotate(360deg);
+    opacity: 0;
+  }
+}
